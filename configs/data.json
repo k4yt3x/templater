@@ -1,0 +1,28 @@
+{
+  "Messages": [
+    {
+      "Role": "user",
+      "Content": "What's the weather in Berlin?"
+    },
+    {
+      "Role": "assistant",
+      "ToolCalls": [
+        {
+          "Function": {
+            "Name": "get_current_weather",
+            "Arguments": "{\"location\": \"Berlin\", \"unit\": \"celsius\"}"
+          }
+        }
+      ]
+    },
+    {
+      "Role": "tool",
+      "Content": "{\"temp\": 22.4, \"unit\": \"celsius\", \"description\": \"Sunny\"}"
+    },
+    {
+      "Role": "user",
+      "Content": "What's the weather in Paris?"
+    }
+  ],
+  "System": "You are a helpful weather assistant. Always use metric units."
+}
